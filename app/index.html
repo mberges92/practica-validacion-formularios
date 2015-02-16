@@ -1,8 +1,9 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Práctica validación formularios</title>
+    <title>Práctica validación formularios - Miguel Berges</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -14,22 +15,85 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <form id="formulario" action="" method="post" novalidate>
+
+        <div id="contenedor">
+            <fieldset>
+                <legend>Información de Contacto:</legend>
+                <div id="contacto">
+                    <div>
+                        <label for="nombre">Nombre:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="nombre" name="nombre" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="apellidos">Apellidos:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" name="telefono" id="telefono" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="email">E-mail:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="email2">Repetir E-mail:</label>
+                        <input type="email" id="email2" name="email2" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="conocio">¿Cómo nos conoció?</label>
+                        <select name="conocio" id="conocio">
+                            <option value="0">Prefiero no contestar</option>
+                            <option value="1">Publicidad</option>
+                            <option value="2">Profesionales del sector</option>
+                            <option value="3">Internet</option>
+                            <option value="4">A través de un amigo o conocido</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            
+
+            <div id="footer-form">
+                <input type="submit" value="Enviar" />
+            </div>
+        </div> <!-- FIN DIV QUE CONTIENE EL FORMULARIO -->
+
+
+    </form>
 
     <div class="hero-unit">
-      <h1>Práctica validación formularios</h1>
-      <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+        <h2>Práctica validación formularios</h2>
+        <p>Aquí debería ir el enlace a <a href="https://github.com/mberges92/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
     </div>
+
+
 
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>
