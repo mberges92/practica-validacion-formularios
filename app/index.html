@@ -88,29 +88,30 @@
 
                     <div>
                         <!-- Esto lo cambiare con jquery o algo, para cuando de click en un boton radio, cambie los datos de las etiquetas y el contenido -->
-                        <label for="nif">NIF:
+                        <!-- HE SACADO LOS INPUT DE DENTRO DE LABEL, PORQUE HAS CAMBIAR VALORES POR JQUERY ME BORRABA EL CAMPO -->
+                        <label for="nif" id="lblnif">NIF:
                             <span class="important">*</span>
-                            <input type="text" class="text" name="nif" if="nif">
                         </label>
+                        <input type="text" class="text" name="nif" id="nif">
                     </div>
                     <div>
-                        <label for="nombreEmpresa" id="lblnombreEmpresa">Nombre:
+                        <label for="nombreParticular" id="lblnombreParticular">Nombre:
                             <span class="important">*</span>
-                            <input type="text" name="nombreEmpresa" id="nombreEmpresa" />
                         </label>
+                        <input type="text" name="nombreParticular" id="nombreParticular" />
                     </div>
                     <div>
                         <label for="direccion">Dirección:
                             <span class="important">*</span>
                         </label>
-                        <input class="text" type="text" id="direccion" name="direccion" placeholder="" />
+                        <input type="text" id="direccion" name="direccion" placeholder="" />
                     </div>
 
                     <div>
                         <label for="cp">Código Postal:
                             <span class="important">*</span>
                         </label>
-                        <input class="text" type="text" id="cp" name="cp" placeholder="" />
+                        <input type="text" id="cp" name="cp" placeholder="" />
                     </div>
 
                     <div>
@@ -222,6 +223,11 @@
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/cifES.js"></script>
+    <script src="scripts/nifES.js"></script>
+    <script src="scripts/iban.js"></script>
+    <script src="scripts/messages_es.js"></script>
+
     <!-- endbuild -->
 </body>
 
