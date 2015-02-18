@@ -10,6 +10,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -19,171 +20,72 @@
 
 <body>
 
-    <form id="formulario" action="" method="post" novalidate>
 
-        <div id="contenedor">
-            <fieldset>
-                <legend>Información de Contacto:</legend>
-                <div id="contacto">
-                    <div>
-                        <label for="nombre">Nombre:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" id="nombre" name="nombre" placeholder="" />
-                    </div>
-                    <div>
-                        <label for="apellidos">Apellidos:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" id="apellidos" name="apellidos" placeholder="" />
-                    </div>
-                    <div>
-                        <label for="telefono">Teléfono:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" name="telefono" id="telefono" placeholder="" />
-                    </div>
-                    <div>
-                        <label for="email">E-mail:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="email" id="email" name="email" placeholder="" />
-                    </div>
-                    <div>
-                        <label for="email2">Repetir E-mail:</label>
-                        <input type="email" id="email2" name="email2" placeholder="" />
-                    </div>
-                    <div>
-                        <label for="conocio">¿Cómo nos conoció?</label>
-                        <select name="conocio" id="conocio">
-                            <option value="0">Prefiero no contestar</option>
-                            <option value="1">Publicidad</option>
-                            <option value="2">Profesionales del sector</option>
-                            <option value="3">Internet</option>
-                            <option value="4">A través de un amigo o conocido</option>
-                        </select>
-                    </div>
+    <form class="form-horizontal" id="formulario" action="php/alta.php" method="post" novalidate>
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Información de Contacto:</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nombre">Nombre</label>
+                <div class="col-md-4">
+                    <input id="nombre" name="nombre" type="text" placeholder="" class="form-control input-md">
+
                 </div>
-            </fieldset>
+            </div>
 
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="apellidos">Apellidos</label>
+                <div class="col-md-4">
+                    <input id="apellidos" name="apellidos" type="text" placeholder="" class="form-control input-md">
 
-
-
-            <fieldset>
-                <legend>Datos de Facturación:</legend>
-
-                <div id="facturacion">
-
-                    <label>Demandante:</label>
-                    <div>
-                        <label for="d_particular">
-                            <input class="text" type="radio" name="demandante" value="0" id="d_particular" checked="checked" />Particular
-                        </label>
-
-                        <label for="d_empresa">
-                            <input class="text" type="radio" name="demandante" value="1" id="d_empresa" />Empresa
-                        </label>
-                    </div>
-
-
-                    <div>
-                        <!-- Esto lo cambiare con jquery o algo, para cuando de click en un boton radio, cambie los datos de las etiquetas y el contenido -->
-                        <!-- HE SACADO LOS INPUT DE DENTRO DE LABEL, PORQUE HAS CAMBIAR VALORES POR JQUERY ME BORRABA EL CAMPO -->
-                        <label for="nif" id="lblnif">NIF:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" class="text" name="nif" id="nif">
-                    </div>
-                    <div>
-                        <label for="nombreParticular" id="lblnombreParticular">Nombre:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" name="nombreParticular" id="nombreParticular" />
-                    </div>
-                    <div>
-                        <label for="direccion">Dirección:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" id="direccion" name="direccion" placeholder="" />
-                    </div>
-
-                    <div>
-                        <label for="cp">Código Postal:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" id="cp" name="cp" placeholder="" />
-                    </div>
-
-                    <div>
-                        <label for="provincia">Provincia:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" id="provincia" name="provincia" disabled="disabled" class="text" />
-                    </div>
-
-                    <div>
-                        <label for="localidad">Localidad:
-                            <span class="important">*</span>
-                        </label>
-                        <input type="text" id="localidad" name="localidad" disabled="disabled" class="text">
-                    </div>
-
-                    <div>
-                        <label for="iban">Código IBAN:
-                            <span class="important">*</span>
-                        </label>
-                        <input class="text" type="text" id="iban" name="iban" placeholder="" />
-                    </div>
-
-                    <div>
-                        <label for="pago">Forma de pago:
-                            <span class="important">*</span>
-                        </label>
-                        <select name="pago" id="pago">
-                            <option value="0">Mensual</option>
-                            <option value="1">Trimestral</option>
-                            <option value="2">Anual</option>
-                        </select>
-                    </div>
                 </div>
-            </fieldset>
+            </div>
 
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="telefono">Telefono</label>
+                <div class="col-md-4">
+                    <input id="telefono" name="telefono" type="text" placeholder="" class="form-control input-md">
 
-
-
-
-
-
-            <fieldset>
-                <legend><strong>Datos de Acceso:</strong>
-                </legend>
-
-                <div id="acceso">
-                    <div>
-                        <label for="usuario">Usuario:
-                            <span class="important">*</span>
-                        </label>
-                        <input class="text" type="text" id="usuario" name="usuario" value="" placeholder="" disabled="disabled" />
-                    </div>
-
-                    <div>
-                        <label for="contrasenia">
-                            <span>Contraseña:</span>
-                            <span class="important">*</span>
-                            <input class="text" id="contrasenia" type="password" name="contrasenia" placeholder="" />
-                        </label>
-                        <meter value="0" id="nivelContrasenia" min="0" max="100" low="30" optimum="50" high="70" >ffff</meter>
-                    </div>
-                    <div>
-                        <label for="contrasenia2">
-                            <span>Repita la contraseña:</span>
-                            <span class="important">*</span>
-                            <input class="text" type="password" id="contrasenia2" name="contrasenia2" placeholder="" />
-                        </label>
-                    </div>
                 </div>
+            </div>
 
-        </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email">E-mail</label>
+                <div class="col-md-4">
+                    <input id="email" name="email" type="email" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email2">Repetir E-mail</label>
+                <div class="col-md-4">
+                    <input id="email2" name="email2" type="email" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="conocio">¿Cómo nos conoció?</label>
+                <div class="col-md-4">
+                    <select id="conocio" name="conocio" class="form-control">
+                        <option value="0">Prefiero no contestar</option>
+                        <option value="1">Publicidad</option>
+                        <option value="2">Profesionales del sector</option>
+                        <option value="3">Internet</option>
+                        <option value="4">A través de un amigo o conocido</option>
+                    </select>
+                </div>
+            </div>
+
         </fieldset>
 
 
@@ -191,34 +93,156 @@
 
 
 
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Datos de Facturación:</legend>
+
+            <!-- Multiple Radios (inline) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="demandante">Demandante:</label>
+                <div class="col-md-4">
+                    <label class="radio-inline" for="tipo_demandante-0">
+                        <input type="radio" name="demandante" id="d_particular" value="0" checked="checked"> Particular
+                    </label>
+                    <label class="radio-inline" for="tipo_demandante-1">
+                        <input type="radio" name="demandante" id="d_empresa" value="1"> Empresa
+                    </label>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nif" id="lblnif">NIF:</label>
+                <div class="col-md-4">
+                    <input id="nif" name="nif" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nombreParticular" id="lblnombreParticular">Nombre:</label>
+                <div class="col-md-4">
+                    <input id="nombreParticular" name="nombreParticular" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="direccion">Dirección:</label>
+                <div class="col-md-4">
+                    <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="cp">Código postal:</label>
+                <div class="col-md-4">
+                    <input id="cp" name="cp" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="provincia">Provincia:</label>
+                <div class="col-md-4">
+                    <input id="provincia" name="provincia" type="text" disabled="disabled" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="localidad">Localidad:</label>
+                <div class="col-md-4">
+                 <select id="localidad" name="localidad" class="form-control"></select>
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="iban">Código IBAN:</label>
+                <div class="col-md-4">
+                    <input id="iban" name="iban" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="pago">Forma de pago:</label>
+                <div class="col-md-4">
+                    <select id="pago" name="pago" class="form-control">
+                        <option value="50">Mensual</option>
+                        <option value="140">Trimestral</option>
+                        <option value="550">Anual</option>
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+
+
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Datos de acceso:</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="usuario">Usuario:</label>
+                <div class="col-md-4">
+                    <input id="usuario" name="usuario" type="text" disabled="disabled" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="contrasenia">Contraseña:</label>
+                <div class="col-md-4">
+                    <input id="contrasenia" name="contrasenia" type="password" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="contrasenia2">Repita la contraseña:</label>
+                <div class="col-md-4">
+                    <input id="contrasenia2" name="contrasenia2" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="alta"></label>
+                <div class="col-md-4">
+                    <input type="submit" id="alta" name="alta" class="btn btn-primary" />
+                </div>
+            </div>
+
+        </fieldset>
 
 
 
-
-        <div id="footer-form">
-            <input type="submit" value="Enviar" />
-        </div>
-        </div>
-        <!-- FIN DIV QUE CONTIENE EL FORMULARIO -->
 
 
     </form>
-
-
-
-
-    <div class="hero-unit">
-        <h2>Práctica validación formularios</h2>
-        <p>Aquí debería ir el enlace a <a href="https://github.com/mberges92/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
-    </div>
-
-
 
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -230,6 +254,3 @@
     <script src="scripts/messages_es.js"></script>
     <script src="scripts/jquery.complexify.js"></script>
     <!-- endbuild -->
-</body>
-
-</html>

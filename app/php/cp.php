@@ -3,25 +3,22 @@
 // ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
 /*
-$dbinfo = "mysql:dbname=validardb;host=localhost";
+$dbinfo = "mysql:dbname=provincias;host=localhost";
 $user = "root";
 $pass = "1234";
 */
-
-
- // EN SERVIDOR DE INFENLACES
+// EN SERVIDOR DE INFENLACES
 $dbinfo = "mysql:dbname=maberges_dwecvalform;host=localhost";
 $user = "maberges_dwec";
 $pass = "123456";
 
-/*
-// EN LOCAL DE MI PORTATIL
+ /* // EN LOCAL DE MI PORTATIL
 $dbinfo = "mysql:dbname=maberges_dwecvalform;host=localhost";
 $user = "root";
 $pass = "root";
 */
 
-//Nos intentamos conectar:
+// Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */
     $db = new PDO($dbinfo, $user, $pass);
@@ -30,13 +27,15 @@ try {
     echo "La conexion ha fallado: " . $e->getMessage();
 }
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
-//$_REQUEST['nif'] = "73003600A";
-if (isset($_REQUEST['nif'])) {
+//$_REQUEST['zip'] = "12";
+$prueba=$_POST['zip'];
+echo"$prueba";
+if (isset($_POST['zip'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
-    //echo $_REQUEST['nif'];
-    $nif = $_REQUEST['nif'];
-    $sql = $db->prepare("SELECT * FROM usuario WHERE nif=?");
-    $sql->bindParam(1, $nif, PDO::PARAM_STR);
+    //echo $_REQUEST['email'];
+   
+    $sql = $db->prepare("SELECT Municipio,CodPostal FROM t_municipios WHERE CodPostal=?");
+    $sql->bindParam(1,$prueba);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 
      * ejecutada por el correspondiente objeto PDOStatement.Si la última sentencia SQL ejecutada por el objeto PDOStatement 
@@ -44,14 +43,28 @@ if (isset($_REQUEST['nif'])) {
      * Sin embargo, este comportamiento no está garantizado para todas las bases de datos y no debería confiarse en él para 
      * aplicaciones portables.
      */
-    $valid = 'true';
+    /*
+    $valid = 'true'; 
     if ($sql->rowCount() > 0) {
         $valid= 'false';
     } else {
        $valid='true';
     }
+    
+    */
+   // $okey = $sql->fetch(); 
+    
+    while ($row=$sql->fetch()) {   
+
+    $opciones.= "<option ='{$row['CodPostal']}'>{$row['Municipio']}</option>";
+  
+      }
+     
+    echo $opciones;
+   
+    
 }
 $sql=null;
 $db = null;
-echo $valid;
+echo $okey[0];
 ?>

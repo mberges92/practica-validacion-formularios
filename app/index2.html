@@ -1,0 +1,235 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>Práctica validación formularios - Miguel Berges</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <form id="formulario" action="" method="post" novalidate>
+
+        <div id="contenedor">
+            <fieldset>
+                <legend>Información de Contacto:</legend>
+                <div id="contacto">
+                    <div>
+                        <label for="nombre">Nombre:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="nombre" name="nombre" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="apellidos">Apellidos:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" name="telefono" id="telefono" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="email">E-mail:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="email2">Repetir E-mail:</label>
+                        <input type="email" id="email2" name="email2" placeholder="" />
+                    </div>
+                    <div>
+                        <label for="conocio">¿Cómo nos conoció?</label>
+                        <select name="conocio" id="conocio">
+                            <option value="0">Prefiero no contestar</option>
+                            <option value="1">Publicidad</option>
+                            <option value="2">Profesionales del sector</option>
+                            <option value="3">Internet</option>
+                            <option value="4">A través de un amigo o conocido</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+
+
+
+            <fieldset>
+                <legend>Datos de Facturación:</legend>
+
+                <div id="facturacion">
+
+                    <label>Demandante:</label>
+                    <div>
+                        <label for="d_particular">
+                            <input class="text" type="radio" name="demandante" value="0" id="d_particular" checked="checked" />Particular
+                        </label>
+
+                        <label for="d_empresa">
+                            <input class="text" type="radio" name="demandante" value="1" id="d_empresa" />Empresa
+                        </label>
+                    </div>
+
+
+                    <div>
+                        <!-- Esto lo cambiare con jquery o algo, para cuando de click en un boton radio, cambie los datos de las etiquetas y el contenido -->
+                        <!-- HE SACADO LOS INPUT DE DENTRO DE LABEL, PORQUE HAS CAMBIAR VALORES POR JQUERY ME BORRABA EL CAMPO -->
+                        <label for="nif" id="lblnif">NIF:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" class="text" name="nif" id="nif">
+                    </div>
+                    <div>
+                        <label for="nombreParticular" id="lblnombreParticular">Nombre:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" name="nombreParticular" id="nombreParticular" />
+                    </div>
+                    <div>
+                        <label for="direccion">Dirección:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="direccion" name="direccion" placeholder="" />
+                    </div>
+
+                    <div>
+                        <label for="cp">Código Postal:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="cp" name="cp" placeholder="" />
+                    </div>
+
+                    <div>
+                        <label for="provincia">Provincia:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="provincia" name="provincia" disabled="disabled" class="text" />
+                    </div>
+
+                    <div>
+                        <label for="localidad">Localidad:
+                            <span class="important">*</span>
+                        </label>
+                        <input type="text" id="localidad" name="localidad" disabled="disabled" class="text">
+                    </div>
+
+                    <div>
+                        <label for="iban">Código IBAN:
+                            <span class="important">*</span>
+                        </label>
+                        <input class="text" type="text" id="iban" name="iban" placeholder="" />
+                    </div>
+
+                    <div>
+                        <label for="pago">Forma de pago:
+                            <span class="important">*</span>
+                        </label>
+                        <select name="pago" id="pago">
+                            <option value="50">Mensual</option>
+                            <option value="140">Trimestral</option>
+                            <option value="550">Anual</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+
+
+
+
+
+
+            <fieldset>
+                <legend><strong>Datos de Acceso:</strong>
+                </legend>
+
+                <div id="acceso">
+                    <div>
+                        <label for="usuario">Usuario:
+                            <span class="important">*</span>
+                        </label>
+                        <input class="text" type="text" id="usuario" name="usuario" value="" placeholder="" disabled="disabled" />
+                    </div>
+
+                    <div>
+                        <label for="contrasenia">
+                            <span>Contraseña:</span>
+                            <span class="important">*</span>
+                            <input class="text" id="contrasenia" type="password" name="contrasenia" placeholder="" />
+                        </label>
+                        <meter value="0" id="nivelContrasenia" min="0" max="100" low="30" optimum="50" high="70" >ffff</meter>
+                    </div>
+                    <div>
+                        <label for="contrasenia2">
+                            <span>Repita la contraseña:</span>
+                            <span class="important">*</span>
+                            <input class="text" type="password" id="contrasenia2" name="contrasenia2" placeholder="" />
+                        </label>
+                    </div>
+                </div>
+
+        </div>
+        </fieldset>
+
+
+
+
+
+
+
+
+
+
+        <div id="footer-form">
+            <input type="submit" value="Dar de alta" name="alta" />
+        </div>
+        </div>
+        <!-- FIN DIV QUE CONTIENE EL FORMULARIO -->
+
+
+    </form>
+
+
+
+
+    <div class="hero-unit">
+        <h2>Práctica validación formularios</h2>
+        <p>Aquí debería ir el enlace a <a href="https://github.com/mberges92/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+    </div>
+
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cifES.js"></script>
+    <script src="scripts/nifES.js"></script>
+    <script src="scripts/iban.js"></script>
+    <script src="scripts/messages_es.js"></script>
+    <script src="scripts/jquery.complexify.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

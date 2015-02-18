@@ -7,9 +7,19 @@ $dbinfo = "mysql:dbname=validardb;host=localhost";
 $user = "root";
 $pass = "1234";
 */
+
+ // EN SERVIDOR DE INFENLACES
 $dbinfo = "mysql:dbname=maberges_dwecvalform;host=localhost";
 $user = "maberges_dwec";
 $pass = "123456";
+
+/*
+ // EN LOCAL DE MI PORTATIL
+$dbinfo = "mysql:dbname=maberges_dwecvalform;host=localhost";
+$user = "root";
+$pass = "root";
+*/
+
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */

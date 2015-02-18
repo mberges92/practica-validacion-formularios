@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: '/var/www/dist'
   };
 
   // Define the configuration for all the tasks
@@ -294,6 +294,18 @@ module.exports = function (grunt) {
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
+        }, {
+          src: '<%= config.app %>/php/validar_email.php',
+          dest: '<%= config.dist %>/php/validar_email.php'
+        }, {
+          src: '<%= config.app %>/php/validar_nif.php',
+          dest: '<%= config.dist %>/php/validar_nif.php'
+        }, {
+          src: '<%= config.app %>/php/cp.php',
+          dest: '<%= config.dist %>/php/cp.php'
+        }, {
+          src: '<%= config.app %>/php/alta.php',
+          dest: '<%= config.dist %>/php/alta.php'
         }]
       },
       styles: {
