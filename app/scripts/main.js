@@ -53,7 +53,8 @@ $(document).ready(function() {
                 minlength: 4
             },
             contrasenia: {
-                required: true
+                required: true,
+                complejidad: true
             },
             contrasenia2: {
                 required: true,
@@ -91,7 +92,13 @@ $(document).ready(function() {
         $("#usuario").val($("#email2").val());
     });
 
+    // CADA VEZ QUE INTRODUZCO UNA TECLA EN EL INPUT DE CONTRASEÑA, OBTENGO UN VALOR DEL PLUGIN COMPLEXIFY
+    $("#contrasenia").focusin(function() {
 
+        $("#contrasenia").complexify({}, function(valid, complexity) {
+            $("#nivelContrasenia").val(complexity);
+        });
+    });
 
     // CAMBIO CON BOTON, PARTICULAR - EMPRESA
     $("input:radio").click(function() {
@@ -151,14 +158,26 @@ $(document).ready(function() {
     }); // FIN DEL EVENTO CLICK DE INPUT RADIO
 
 
-
-
 }); // FIN DEL DOCUMENT READY
+
+
+jQuery.validator.addMethod("complejidad", function(value, element) {
+
+    var barra = $("#nivelContrasenia").val();
+
+    if (barra < 30) {
+        return false;
+    } else {
+        return true;
+    }
+}, "Debe introducir una contraseña mas segura.");
+
+
 
 
 // ARRAY PARA CODIGO POSTAL Y PROVINCIA
 var prov = new Array();
-prov[0] = "NO HAY";
+prov[0] = "NO HAY PROVINCIA";
 prov[1] = "Alava";
 prov[2] = "Albacete";
 prov[3] = "Alicante";
