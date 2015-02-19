@@ -1,7 +1,3 @@
-/*
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
- <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
- */
 $(document).ready(function() {
     $("#formulario").validate({
         rules: {

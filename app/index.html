@@ -160,7 +160,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="localidad">Localidad:</label>
                 <div class="col-md-4">
-                 <select id="localidad" name="localidad" class="form-control"></select>
+                    <select id="localidad" name="localidad" class="form-control"></select>
 
                 </div>
             </div>
@@ -208,7 +208,7 @@
                 <label class="col-md-4 control-label" for="contrasenia">Contraseña:</label>
                 <div class="col-md-4">
                     <input id="contrasenia" name="contrasenia" type="password" placeholder="" class="form-control input-md">
-
+                    <meter value="0" id="nivelContrasenia" min="0" max="100" low="20" optimum="50" high="70"></meter>
                 </div>
             </div>
 
@@ -231,11 +231,14 @@
 
         </fieldset>
 
-
-
-
-
     </form>
+
+    <div class="hero-unit">
+        <h6>Práctica validación formularios</h6>
+        <p>Aquí debería ir el enlace a <a href="https://github.com/mberges92/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+    </div>
+
+
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -254,3 +257,8 @@
     <script src="scripts/messages_es.js"></script>
     <script src="scripts/jquery.complexify.js"></script>
     <!-- endbuild -->
+ 
+
+ </body>
+</html>
+
