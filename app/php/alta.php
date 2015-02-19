@@ -8,7 +8,7 @@
 
 <?php
 $cantidad=$_POST['pago'];
-echo "Se va a dar de alta con un coste de $mensualidad euros";
+echo "Se va a dar de alta con un coste de $cantidad euros";
 echo "<br><a href='../index.html'>Aceptar</a><br><a href='../index.html'>Cancelar</a>";
 ?>
 
